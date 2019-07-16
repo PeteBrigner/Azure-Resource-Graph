@@ -76,3 +76,6 @@ az graph query -q "project tags | summarize buildschema(tags)" --subscriptions x
 
 ## List owner tag with user name, return project name (resource)
 az graph query -q "where tags.owner =~'<exact Value>' | project name"
+
+## List owner tag with user name, return project name (resource), all resoruce tags, and Subscription ID, Order by subscriptionId acending
+az graph query -q "where tags.owner =~'<Exact Value>' | project name, tags, subscriptionId | order by subscriptionId asc
